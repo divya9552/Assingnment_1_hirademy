@@ -1,0 +1,23 @@
+import pandas as pd
+import numpy as np
+
+# Set random seed for reproducibility
+np.random.seed(42)
+
+# Generate synthetic data
+n_samples = 1000
+
+data = {
+    'Age': np.random.randint(20, 65, size=n_samples),
+    'Income': np.random.randint(30000, 150000, size=n_samples),
+    'Monthly_Expenses': np.random.randint(1000, 5000, size=n_samples),
+    'Existing_Investments': np.random.randint(10000, 500000, size=n_samples),
+    'Financial_Goals': np.random.choice(['Retirement', 'Education', 'House'], size=n_samples),
+    'Risk_Tolerance': np.random.choice(['Low', 'Medium', 'High'], size=n_samples),
+    'Family_Size': np.random.randint(1, 6, size=n_samples),
+    'Debt_Obligations': np.random.randint(0, 100000, size=n_samples),
+    'Hobbies': np.random.choice(['Traveling', 'Reading', 'Sports', 'Music', 'Cooking'], size=n_samples)
+}
+
+df = pd.DataFrame(data)
+df.head()
