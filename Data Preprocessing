@@ -1,0 +1,19 @@
+# Check for missing values
+print(df.isnull().sum())
+
+# No missing values found, so no need for imputation
+
+# Perform feature engineering if necessary
+# For example, you can calculate debt-to-income ratio, net worth, etc.
+
+# Encode categorical variables
+df = pd.get_dummies(df, columns=['Financial_Goals', 'Risk_Tolerance', 'Hobbies'], drop_first=True)
+
+# Normalize numerical features
+from sklearn.preprocessing import MinMaxScaler
+
+scaler = MinMaxScaler()
+num_cols = ['Age', 'Income', 'Monthly_Expenses', 'Existing_Investments', 'Family_Size', 'Debt_Obligations']
+df[num_cols] = scaler.fit_transform(df[num_cols])
+
+df.head()
