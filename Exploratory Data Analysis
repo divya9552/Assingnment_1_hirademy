@@ -1,0 +1,10 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Visualize distributions
+sns.pairplot(df[num_cols])
+plt.show()
+
+# Explore relationships between variables
+sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
+plt.show()
